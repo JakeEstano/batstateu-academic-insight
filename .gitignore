@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+.DS_Store
+.taste-skill/
+artifacts/
+.env
+.env.*
+!.env.example

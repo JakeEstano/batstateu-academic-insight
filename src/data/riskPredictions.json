@@ -1,0 +1,1683 @@
+{
+  "metadata": {
+    "data_status": "Synthetic demonstration only; no real student records or validated institutional predictions.",
+    "target": "Whether a fictional student fails at least one subject in the following semester.",
+    "seed": 405,
+    "sklearn_version": "1.6.1",
+    "features": [
+      "previous_average_grade",
+      "attendance_percent",
+      "previous_failed_subjects",
+      "assignment_completion_percent"
+    ],
+    "training_records": 800,
+    "test_records": 200,
+    "selection": "Five-fold stratified CV on training data; maximize recall. Scaler fitted separately inside each fold.",
+    "best_parameters": {
+      "knn__n_neighbors": 5,
+      "knn__weights": "uniform"
+    },
+    "cv_recall": 0.5273076923076923,
+    "test_metrics": {
+      "accuracy": 0.82,
+      "precision": 0.675,
+      "recall": 0.54,
+      "f1": 0.6,
+      "confusion_matrix": [
+        [
+          137,
+          13
+        ],
+        [
+          23,
+          27
+        ]
+      ]
+    },
+    "majority_baseline_test_metrics": {
+      "accuracy": 0.75,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          150,
+          0
+        ],
+        [
+          50,
+          0
+        ]
+      ]
+    },
+    "confusion_matrix_order": "Rows actual [not at risk, at risk]; columns predicted [not at risk, at risk].",
+    "dashboard_predictions": {
+      "2025-1": {
+        "assessed": 100,
+        "at_risk": 20
+      },
+      "2025-2": {
+        "assessed": 100,
+        "at_risk": 17
+      },
+      "2026-1": {
+        "assessed": 100,
+        "at_risk": 28
+      },
+      "2026-2": {
+        "assessed": 100,
+        "at_risk": 16
+      }
+    }
+  },
+  "periods": {
+    "2025-1": [
+      {
+        "recordKey": "2025-1-demo-001",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-002",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-003",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-004",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-005",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-006",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-007",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-008",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-009",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-010",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-011",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-012",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-013",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-014",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-015",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-016",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-017",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-018",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-019",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-020",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-021",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-022",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-023",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-024",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-025",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-026",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-027",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-028",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-029",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-030",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-031",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-032",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-033",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-034",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-035",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-036",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-037",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-038",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-039",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-040",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-041",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-042",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-043",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-044",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-045",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-046",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-047",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-048",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-049",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-050",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-051",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-052",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-053",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-054",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-055",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-056",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-057",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-058",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-059",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-060",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-061",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-062",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-063",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-064",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-065",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-066",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-067",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-068",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-069",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-070",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-071",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-072",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-073",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-074",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-075",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-076",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-077",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-078",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-079",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-080",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-081",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-082",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-083",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-084",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-085",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-086",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-087",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-088",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-089",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-090",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-091",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-092",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-093",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-094",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-095",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-096",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-1-demo-097",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-098",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-099",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-1-demo-100",
+        "predictedAtRisk": false
+      }
+    ],
+    "2025-2": [
+      {
+        "recordKey": "2025-2-demo-001",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-002",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-003",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-004",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-005",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-006",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-007",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-008",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-009",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-010",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-011",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-012",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-013",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-014",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-015",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-016",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-017",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-018",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-019",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-020",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-021",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-022",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-023",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-024",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-025",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-026",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-027",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-028",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-029",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-030",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-031",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-032",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-033",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-034",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-035",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-036",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-037",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-038",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-039",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-040",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-041",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-042",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-043",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-044",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-045",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-046",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-047",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-048",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-049",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-050",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-051",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-052",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-053",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-054",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-055",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-056",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-057",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-058",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-059",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-060",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-061",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-062",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-063",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-064",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-065",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-066",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-067",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-068",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-069",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-070",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-071",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-072",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-073",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-074",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-075",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-076",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-077",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-078",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-079",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-080",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-081",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-082",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-083",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-084",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-085",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-086",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-087",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-088",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-089",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-090",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-091",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-092",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-093",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-094",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-095",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-096",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2025-2-demo-097",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-098",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-099",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2025-2-demo-100",
+        "predictedAtRisk": false
+      }
+    ],
+    "2026-1": [
+      {
+        "recordKey": "2026-1-demo-001",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-002",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-003",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-004",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-005",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-006",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-007",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-008",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-009",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-010",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-011",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-012",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-013",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-014",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-015",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-016",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-017",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-018",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-019",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-020",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-021",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-022",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-023",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-024",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-025",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-026",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-027",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-028",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-029",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-030",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-031",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-032",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-033",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-034",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-035",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-036",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-037",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-038",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-039",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-040",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-041",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-042",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-043",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-044",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-045",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-046",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-047",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-048",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-049",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-050",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-051",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-052",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-053",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-054",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-055",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-056",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-057",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-058",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-059",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-060",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-061",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-062",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-063",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-064",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-065",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-066",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-067",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-068",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-069",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-070",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-071",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-072",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-073",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-074",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-075",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-076",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-077",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-078",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-079",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-080",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-081",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-082",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-083",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-084",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-085",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-086",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-087",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-088",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-089",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-090",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-091",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-092",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-093",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-094",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-095",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-096",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-097",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-098",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-1-demo-099",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-1-demo-100",
+        "predictedAtRisk": false
+      }
+    ],
+    "2026-2": [
+      {
+        "recordKey": "2026-2-demo-001",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-002",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-003",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-004",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-005",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-006",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-007",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-008",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-009",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-010",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-011",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-012",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-013",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-014",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-015",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-016",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-017",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-018",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-019",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-020",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-021",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-022",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-023",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-024",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-025",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-026",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-027",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-028",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-029",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-030",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-031",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-032",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-033",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-034",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-035",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-036",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-037",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-038",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-039",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-040",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-041",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-042",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-043",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-044",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-045",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-046",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-047",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-048",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-049",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-050",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-051",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-052",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-053",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-054",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-055",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-056",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-057",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-058",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-059",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-060",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-061",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-062",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-063",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-064",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-065",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-066",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-067",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-068",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-069",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-070",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-071",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-072",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-073",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-074",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-075",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-076",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-077",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-078",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-079",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-080",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-081",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-082",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-083",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-084",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-085",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-086",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-087",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-088",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-089",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-090",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-091",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-092",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-093",
+        "predictedAtRisk": true
+      },
+      {
+        "recordKey": "2026-2-demo-094",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-095",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-096",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-097",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-098",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-099",
+        "predictedAtRisk": false
+      },
+      {
+        "recordKey": "2026-2-demo-100",
+        "predictedAtRisk": false
+      }
+    ]
+  }
+}

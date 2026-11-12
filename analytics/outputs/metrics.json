@@ -1,0 +1,71 @@
+{
+  "data_status": "Synthetic demonstration only; no real student records or validated institutional predictions.",
+  "target": "Whether a fictional student fails at least one subject in the following semester.",
+  "seed": 405,
+  "sklearn_version": "1.6.1",
+  "features": [
+    "previous_average_grade",
+    "attendance_percent",
+    "previous_failed_subjects",
+    "assignment_completion_percent"
+  ],
+  "training_records": 800,
+  "test_records": 200,
+  "selection": "Five-fold stratified CV on training data; maximize recall. Scaler fitted separately inside each fold.",
+  "best_parameters": {
+    "knn__n_neighbors": 5,
+    "knn__weights": "uniform"
+  },
+  "cv_recall": 0.5273076923076923,
+  "test_metrics": {
+    "accuracy": 0.82,
+    "precision": 0.675,
+    "recall": 0.54,
+    "f1": 0.6,
+    "confusion_matrix": [
+      [
+        137,
+        13
+      ],
+      [
+        23,
+        27
+      ]
+    ]
+  },
+  "majority_baseline_test_metrics": {
+    "accuracy": 0.75,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "confusion_matrix": [
+      [
+        150,
+        0
+      ],
+      [
+        50,
+        0
+      ]
+    ]
+  },
+  "confusion_matrix_order": "Rows actual [not at risk, at risk]; columns predicted [not at risk, at risk].",
+  "dashboard_predictions": {
+    "2025-1": {
+      "assessed": 100,
+      "at_risk": 20
+    },
+    "2025-2": {
+      "assessed": 100,
+      "at_risk": 17
+    },
+    "2026-1": {
+      "assessed": 100,
+      "at_risk": 28
+    },
+    "2026-2": {
+      "assessed": 100,
+      "at_risk": 16
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "description": "Helps BS Information Technology program chairs monitor academic performance, SETE results, faculty metrics, and student risk with interactive insights and reports.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  },
+  "title": "BatStateU Academic Insight",
+  "icons": {
+    "icon": "favicon.svg"
+  }
+}
