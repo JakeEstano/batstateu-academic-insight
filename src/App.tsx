@@ -248,7 +248,7 @@ function passingRate(period: Period) {
   )
 }
 
-type KpiKey = "grades" | "passing" | "participation" | "rating"
+type KpiKey = "grades" | "passing" | "subjects" | "participation" | "rating"
 type Kpi = {
   key: KpiKey
   label: string
@@ -267,6 +267,7 @@ function calculateKpis(period: Period): Kpi[] {
   const values = {
     grades: percent(period.gradeOnTime, period.gradeDue),
     passing: passingRate(period),
+    subjects: period.subjects.filter((subject) => percent(subject.passing, subject.total) < 80).length,
     participation: percent(period.seteCompleted, period.seteEligible),
     rating: period.seteRating,
   }
@@ -300,6 +301,19 @@ function calculateKpis(period: Period): Kpi[] {
       action:
         "Review low-performing subjects and coordinate targeted learning support.",
       icon: TrendingUp,
+    },
+    {
+      key: "subjects",
+      label: "Subjects Below 80% Passing",
+      value: values.subjects,
+      display: `${values.subjects} of ${period.subjects.length}`,
+      target: "0 below 80%",
+      met: values.subjects === 0,
+      status: values.subjects === 0 ? "Meeting target" : "Needs review",
+      formula: "Count of subjects with a passing rate below the proposed 80% review threshold",
+      interpretation: "Shows course-level concerns that a program-wide average can hide. It does not identify individual students.",
+      action: "Review the affected subjects' assessment outcomes and coordinate appropriate learning support.",
+      icon: BookOpen,
     },
     {
       key: "participation",
@@ -363,6 +377,14 @@ function calculateAlerts(kpis: Kpi[]): AcademicAlert[] {
       value: value.passing.display,
       reason: "The proposed warning threshold is 80%.",
       action: value.passing.action,
+    })
+  if (value.subjects.value > 0)
+    alerts.push({
+      key: "subjects",
+      title: "Subjects below passing review threshold",
+      value: value.subjects.display,
+      reason: "The proposed review threshold is 80% passing per subject.",
+      action: value.subjects.action,
     })
   if (value.participation.value < 60)
     alerts.push({
@@ -620,7 +642,7 @@ function App() {
         </div>
       </header>
 
-      <main>
+      <main id="main-content">
         <section className="overview-row">
           <div>
             <h1>Academic Overview</h1>
@@ -637,9 +659,9 @@ function App() {
         </section>
 
         <div className="dashboard-context" aria-label="Dashboard access and data status">
-          <span><ShieldCheck size={14} /> Restricted Access — BSIT Program Chair</span>
+          <span><ShieldCheck size={14} /> BSIT Program Chair demo view</span>
           <span className="demo-data-label"><i aria-hidden="true" /> Demo Data</span>
-          <span>Role-scoped demonstration · No live university connection</span>
+          <span>Aggregated sample records · No live university connection</span>
         </div>
 
         <section className="filter-toolbar" aria-label="Dashboard filters">
@@ -670,13 +692,16 @@ function App() {
 
         </section>
 
+        <p className="data-explainer"><strong>How to read this view:</strong> Sample counts and ratings are converted into KPI rates and trends. Alerts use proposed review thresholds; they are prompts to investigate, not conclusions about people.</p>
+
         <section className="kpi-grid" aria-label="Key performance indicators">
           {kpis.map((kpi) => {
             const previousKpi = previous
               ? calculateKpis(previous).find((item) => item.key === kpi.key)
               : undefined
             const delta = previousKpi ? kpi.value - previousKpi.value : 0
-            const improved = delta >= 0
+            const improved = kpi.key === "subjects" ? delta <= 0 : delta >= 0
+            const deltaUnit = kpi.key === "rating" ? "" : kpi.key === "subjects" ? ` subject${Math.abs(delta) === 1 ? "" : "s"}` : " pts"
             return (
               <button
                 className="kpi-card"
@@ -700,7 +725,7 @@ function App() {
                     Target <b>{kpi.target}</b>
                   </span>
                   <span className={!previousKpi || delta === 0 ? "" : improved ? "positive" : "negative"}>
-                    {previousKpi ? <>{delta > 0 ? "+" : ""}{delta.toFixed(kpi.key === "rating" ? 1 : 0)}{kpi.key === "rating" ? "" : " pts"} <small>vs prior semester</small></> : <small>No prior semester</small>}
+                    {previousKpi ? <>{delta > 0 ? "+" : ""}{delta.toFixed(kpi.key === "rating" ? 1 : 0)}{deltaUnit} <small>vs prior semester</small></> : <small>No prior semester</small>}
                   </span>
                 </div>
               </button>
@@ -797,7 +822,7 @@ function App() {
               </ResponsiveContainer>
             </div>
             <p className="chart-hint">
-              <Info size={11} /> Select a data point for its semester summary.
+              <Info size={11} /> Select a data point for its semester summary; read ratings alongside participation.
             </p>
           </article>
 
@@ -886,7 +911,7 @@ function App() {
               </ResponsiveContainer>
             </div>
             <p className="chart-hint">
-              <Info size={11} /> Amber indicates a passing rate below 80%.
+              <Info size={11} /> Dashed line: 85% target. Amber: below 80% review threshold. Select a bar for details.
             </p>
           </article>
         </section>
@@ -1021,7 +1046,7 @@ function App() {
             <i /> Illustrative Academic Data — For Case Study Demonstration Only
           </span>
           <span>
-            <ShieldCheck size={12} /> Aggregated, role-scoped information
+            <ShieldCheck size={12} /> Aggregated sample data · No individual records
           </span>
         </div>
         <p>
