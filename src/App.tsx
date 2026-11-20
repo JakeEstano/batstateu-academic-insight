@@ -617,7 +617,7 @@ function App() {
       <header className="app-header">
         <div className="brand-lockup">
           <span className="brand-mark">
-            <span>A</span>
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M7 25h5l5-12 6 17 5-10h5" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </span>
           <div>
             <strong>Acadence</strong>
