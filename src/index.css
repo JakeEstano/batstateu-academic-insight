@@ -27,8 +27,8 @@
 .app-header { height: 68px; padding: 0 30px; background: rgba(255, 255, 255, .94); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 10; }
 .brand-lockup { display: flex; align-items: center; gap: 11px; }
 .brand-mark { width: 38px; height: 38px; border-radius: 11px; background: var(--crimson); color: white; display: grid; place-items: center; position: relative; overflow: hidden; box-shadow: 0 5px 13px rgba(185, 28, 28, .18); }
-.brand-mark::after { content: ""; position: absolute; width: 48px; height: 10px; background: rgba(255, 255, 255, .14); transform: rotate(-32deg); bottom: 3px; }
-.brand-mark span { font: 700 16px "Plus Jakarta Sans"; position: relative; z-index: 1; }
+
+.brand-mark svg { width: 32px; height: 32px; display: block; }
 .brand-lockup strong { display: block; font: 700 13px "Plus Jakarta Sans"; letter-spacing: -.2px; }
 .brand-lockup small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
 .header-actions { display: flex; align-items: center; gap: 13px; }
