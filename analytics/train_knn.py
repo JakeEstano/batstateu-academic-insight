@@ -17,11 +17,10 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'analytics' / 'outputs'
 SEED = 405
 FEATURES = ['previous_average_grade', 'attendance_percent', 'previous_failed_subjects', 'assignment_completion_percent']
-PERIODS = ['2025-1', '2025-2', '2026-1', '2026-2']
 
 
 def student(rng, key, with_outcome=False):
-    # Fictional 0–100 grade scale, not an assertion about BatStateU grading.
+    # Fictional 0–100 grade scale, not an assertion about any university's grading.
     preparedness = rng.gauss(0, 1)
     clip = lambda value, low, high: max(low, min(high, value))
     grade = round(clip(77 + 10 * preparedness + rng.gauss(0, 6), 35, 99), 1)
@@ -72,16 +71,6 @@ def main():
     assert sum(sum(row) for row in metrics['confusion_matrix']) == len(test)
     write_csv('synthetic_training_data.csv', [{**r, 'split':'test' if r['record_key'] in test_keys else 'train'} for r in rows])
     write_csv('held_out_predictions.csv', [{**r, 'predicted_at_risk':int(p)} for r,p in zip(test,predicted)])
-    # Use exactly the training-only fitted pipeline evaluated above. Do not refit on the test set.
-    demo_rng = random.Random(SEED + 100)
-    dashboard_rows = []
-    exported = {}
-    for period in PERIODS:
-        records = [student(demo_rng, f'{period}-demo-{i+1:03}') for i in range(100)]
-        labels = search.predict(x(records))
-        exported[period] = [{'recordKey':r['record_key'], 'predictedAtRisk':bool(label)} for r,label in zip(records,labels)]
-        dashboard_rows.extend([{ 'period':period, **r, 'predicted_at_risk':int(label)} for r,label in zip(records,labels)])
-    write_csv('dashboard_input_predictions.csv', dashboard_rows)
     results = {
         'data_status':'Synthetic demonstration only; no real student records or validated institutional predictions.',
         'target':'Whether a fictional student fails at least one subject in the following semester.',
@@ -91,10 +80,8 @@ def main():
         'best_parameters':search.best_params_, 'cv_recall':search.best_score_,
         'test_metrics':metrics, 'majority_baseline_test_metrics':scores(y(test),baseline.predict(x(test))),
         'confusion_matrix_order':'Rows actual [not at risk, at risk]; columns predicted [not at risk, at risk].',
-        'dashboard_predictions':{p:{'assessed':len(records), 'at_risk':sum(r['predictedAtRisk'] for r in records)} for p,records in exported.items()},
     }
     (OUT/'metrics.json').write_text(json.dumps(results, indent=2)+'\n')
-    (ROOT/'src/data/riskPredictions.json').write_text(json.dumps({'metadata':results, 'periods':exported}, indent=2)+'\n')
     print(json.dumps(results, indent=2))
 
 

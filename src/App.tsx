@@ -1,4 +1,3 @@
-import { modelPredictions, summarizeRisk, riskModel, type RiskPrediction } from "./data/demoRisk"
 import { useEffect, useMemo, useState } from "react"
 import {
   AlertTriangle,
@@ -48,7 +47,6 @@ type Period = {
   seteCompleted: number
   seteEligible: number
   seteRating: number
-  riskPredictions: RiskPrediction[]
   subjects: Subject[]
   dimensions: number[]
 }
@@ -72,7 +70,6 @@ const periods: Period[] = [
     seteCompleted: 58,
     seteEligible: 100,
     seteRating: 3.72,
-    riskPredictions: modelPredictions("2025-1"),
     subjects: [
       {
         code: "IT 101",
@@ -117,7 +114,6 @@ const periods: Period[] = [
     seteCompleted: 76,
     seteEligible: 100,
     seteRating: 3.94,
-    riskPredictions: modelPredictions("2025-2"),
     subjects: [
       {
         code: "IT 101",
@@ -162,7 +158,6 @@ const periods: Period[] = [
     seteCompleted: 55,
     seteEligible: 100,
     seteRating: 4.1,
-    riskPredictions: modelPredictions("2026-1"),
     subjects: [
       {
         code: "IT 101",
@@ -207,7 +202,6 @@ const periods: Period[] = [
     seteCompleted: 84,
     seteEligible: 100,
     seteRating: 4.24,
-    riskPredictions: modelPredictions("2026-2"),
     subjects: [
       {
         code: "IT 101",
@@ -254,7 +248,7 @@ function passingRate(period: Period) {
   )
 }
 
-type KpiKey = "grades" | "passing" | "participation" | "rating" | "risk"
+type KpiKey = "grades" | "passing" | "participation" | "rating"
 type Kpi = {
   key: KpiKey
   label: string
@@ -270,13 +264,11 @@ type Kpi = {
 }
 
 function calculateKpis(period: Period): Kpi[] {
-  const risk = summarizeRisk(period.riskPredictions)
   const values = {
     grades: percent(period.gradeOnTime, period.gradeDue),
     passing: passingRate(period),
     participation: percent(period.seteCompleted, period.seteEligible),
     rating: period.seteRating,
-    risk: percent(risk.atRisk, risk.assessed),
   }
   return [
     {
@@ -340,21 +332,6 @@ function calculateKpis(period: Period): Kpi[] {
         "Use dimension-level results with other evidence to identify teaching improvement opportunities.",
       icon: Star,
     },
-    {
-      key: "risk",
-      label: "At-Risk Student Rate",
-      value: values.risk,
-      display: `${values.risk}%`,
-      target: "≤20%",
-      met: values.risk <= 20,
-      status: values.risk <= 20 ? "Meeting target" : "Above target",
-      formula: "(Students flagged at risk / Total assessed students) × 100",
-      interpretation:
-        `${risk.atRisk} of ${risk.assessed} anonymous synthetic records are predicted at risk by the demonstration KNN model. The predicted outcome is failing at least one subject in the following semester. This model has not been validated on real university data.`,
-      action:
-        "Review common risk factors and prioritize supportive academic advising.",
-      icon: AlertTriangle,
-    },
   ]
 }
 
@@ -402,14 +379,6 @@ function calculateAlerts(kpis: Kpi[]): AcademicAlert[] {
       value: value.rating.display,
       reason: "The proposed review threshold is 3.5/5.",
       action: value.rating.action,
-    })
-  if (value.risk.value > 25)
-    alerts.push({
-      key: "risk",
-      title: "Elevated academic risk",
-      value: value.risk.display,
-      reason: "The proposed warning threshold is 25%.",
-      action: value.risk.action,
     })
   return alerts
 }
@@ -617,7 +586,9 @@ function App() {
       <header className="app-header">
         <div className="brand-lockup">
           <span className="brand-mark">
-            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M7 25h5l5-12 6 17 5-10h5" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <path d="M7 25h5l5-12 6 17 5-10h5" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </span>
           <div>
             <strong>Acadence</strong>
@@ -705,7 +676,7 @@ function App() {
               ? calculateKpis(previous).find((item) => item.key === kpi.key)
               : undefined
             const delta = previousKpi ? kpi.value - previousKpi.value : 0
-            const improved = kpi.key === "risk" ? delta <= 0 : delta >= 0
+            const improved = delta >= 0
             return (
               <button
                 className="kpi-card"
@@ -1110,22 +1081,6 @@ function App() {
               <p>{modal.data.action}</p>
             </div>
           </div>
-          {modal.data.key === "risk" && (
-            <div className="detail-list">
-              <div>
-                <span>Model and inputs</span>
-                <p>KNN classification · k={riskModel.best_parameters.knn__n_neighbors} · {riskModel.best_parameters.knn__weights} weights. Inputs: previous average grade, attendance, previous failed subjects, and assignment completion.</p>
-              </div>
-              <div>
-                <span>Held-out synthetic test results</span>
-                <p>Recall: {(riskModel.test_metrics.recall * 100).toFixed(1)}% · Precision: {(riskModel.test_metrics.precision * 100).toFixed(1)}% · Accuracy: {(riskModel.test_metrics.accuracy * 100).toFixed(1)}%. Evaluated on {riskModel.test_records} fictional records; {riskModel.training_records} separate records used for training.</p>
-              </div>
-              <div>
-                <span>Responsible use</span>
-                <p>Synthetic-data results demonstrate the workflow, not real-world accuracy. A flag suggests supportive adviser review and must not automatically determine a student’s academic standing.</p>
-              </div>
-            </div>
-          )}
           <DemoNotice />
         </Modal>
       )}

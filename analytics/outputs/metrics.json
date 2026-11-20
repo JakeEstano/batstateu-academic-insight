@@ -49,23 +49,5 @@
       ]
     ]
   },
-  "confusion_matrix_order": "Rows actual [not at risk, at risk]; columns predicted [not at risk, at risk].",
-  "dashboard_predictions": {
-    "2025-1": {
-      "assessed": 100,
-      "at_risk": 20
-    },
-    "2025-2": {
-      "assessed": 100,
-      "at_risk": 17
-    },
-    "2026-1": {
-      "assessed": 100,
-      "at_risk": 28
-    },
-    "2026-2": {
-      "assessed": 100,
-      "at_risk": 16
-    }
-  }
+  "confusion_matrix_order": "Rows actual [not at risk, at risk]; columns predicted [not at risk, at risk]."
 }

@@ -1,0 +1,64 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 1400 900] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 2055 >>
+stream
+0.961 0.965 0.976 rg 0 0 1400 900 re f
+1.000 1.000 1.000 rg 55 45 1290 810 re f
+0.725 0.110 0.110 rg 55 45 9 810 re f
+0.725 0.110 0.110 rg BT /F2 17 Tf 100 803 Td (MODEL TRAINING RESULTS) Tj ET
+0.090 0.098 0.137 rg BT /F2 36 Tf 100 748 Td (Synthetic student-risk classification) Tj ET
+0.400 0.439 0.522 rg BT /F1 19 Tf 100 707 Td (K-nearest neighbors  |  Standalone case-study exercise) Tj ET
+0.961 0.965 0.976 rg 100 558 1198 112 re f
+0.400 0.439 0.522 rg BT /F2 15 Tf 124 637 Td (TRAINING DATA) Tj ET
+0.090 0.098 0.137 rg BT /F2 26 Tf 124 598 Td (1,000 fictional records) Tj ET
+0.090 0.098 0.137 rg BT /F2 26 Tf 590 598 Td (800 training  /  200 held-out test) Tj ET
+0.961 0.965 0.976 rg 100 389 280 138 re f
+0.400 0.439 0.522 rg BT /F2 15 Tf 120 492 Td (ACCURACY) Tj ET
+0.090 0.098 0.137 rg BT /F2 43 Tf 120 432 Td (82.0%) Tj ET
+0.961 0.965 0.976 rg 406 389 280 138 re f
+0.400 0.439 0.522 rg BT /F2 15 Tf 426 492 Td (PRECISION) Tj ET
+0.090 0.098 0.137 rg BT /F2 43 Tf 426 432 Td (67.5%) Tj ET
+1.000 0.953 0.953 rg 712 389 280 138 re f
+0.400 0.439 0.522 rg BT /F2 15 Tf 732 492 Td (RECALL) Tj ET
+0.090 0.098 0.137 rg BT /F2 43 Tf 732 432 Td (54.0%) Tj ET
+0.961 0.965 0.976 rg 1018 389 280 138 re f
+0.400 0.439 0.522 rg BT /F2 15 Tf 1038 492 Td (F1 SCORE) Tj ET
+0.090 0.098 0.137 rg BT /F2 43 Tf 1038 432 Td (60.0%) Tj ET
+0.725 0.110 0.110 rg BT /F2 16 Tf 100 336 Td (MODEL SETUP) Tj ET
+0.090 0.098 0.137 rg BT /F2 23 Tf 100 296 Td (k = 5  |  uniform weights  |  5-fold stratified cross-validation) Tj ET
+0.400 0.439 0.522 rg BT /F1 18 Tf 100 257 Td (Inputs: previous average grade, attendance, previous failed subjects, assignment completion) Tj ET
+0.890 0.898 0.918 rg 100 223 1198 1 re f
+0.725 0.110 0.110 rg BT /F2 16 Tf 100 183 Td (HELD-OUT CONFUSION MATRIX) Tj ET
+0.090 0.098 0.137 rg BT /F2 19 Tf 100 148 Td (Correct: 137 not at risk, 27 at risk.  Errors: 13 false positives, 23 false negatives.) Tj ET
+0.400 0.439 0.522 rg BT /F1 16 Tf 100 83 Td (Synthetic demonstration only. 54% recall is insufficient for dependable real-world screening.) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000252 00000 n 
+0000000322 00000 n 
+0000000397 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2504
+%%EOF
