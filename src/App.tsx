@@ -617,11 +617,11 @@ function App() {
       <header className="app-header">
         <div className="brand-lockup">
           <span className="brand-mark">
-            <span>B</span>
+            <span>A</span>
           </span>
           <div>
-            <strong>BatStateU Academic Insight</strong>
-            <small>Academic Performance &amp; Teaching Effectiveness</small>
+            <strong>Acadence</strong>
+            <small>See progress. Shape what’s next.</small>
           </div>
         </div>
         <div className="header-actions">
