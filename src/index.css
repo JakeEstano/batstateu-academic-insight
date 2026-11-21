@@ -141,7 +141,7 @@ footer > div { display: flex; gap: 15px; } footer span { display: flex; align-it
 /* Shared frame: five equal metric columns; chart rows share the same outer edges. */
 .app { display: flex; flex-direction: column; }
 .app-header { height: 76px; padding-inline: max(28px, calc((100vw - 1320px) / 2)); background: white; }
-.brand-mark { border-radius: 8px; box-shadow: none; }
+.brand-mark { border-radius: 8px; background: #7F1D2D; box-shadow: none; }
 .brand-mark::after { display: none; }
 .brand-lockup strong { font-size: 15px; }
 .brand-lockup small { font-size: 11px; margin-top: 4px; }

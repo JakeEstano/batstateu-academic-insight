@@ -609,7 +609,9 @@ function App() {
         <div className="brand-lockup">
           <span className="brand-mark">
             <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-              <path d="M7 25h5l5-12 6 17 5-10h5" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M5.5 30.5 17.2 8.4c1-1.9 2.5-2.7 4.8-1.6v24.8c-4.8-3.4-10.3-3.8-16.5-1.1Z" fill="#fff" />
+              <path d="M22 6.8c2.3-1.1 3.8-.3 4.8 1.6l11.7 22.1c-6.2-2.7-11.7-2.3-16.5 1.1V6.8Z" fill="#F0C879" />
+              <path d="M8.4 33.3c4.6-1.1 8.7-.5 13.6 2.8 4.9-3.3 9-3.9 13.6-2.8" stroke="#fff" strokeWidth="1.7" strokeLinecap="round" opacity=".85" />
             </svg>
           </span>
           <div>
